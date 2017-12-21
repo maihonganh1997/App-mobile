@@ -12,7 +12,7 @@ const Router = StackNavigator(
             screen: Screen1
         },
         Screen_2: {
-            screen: Screen_2
+            screen : Screen_2
         },
         Screen_3: {
             screen: Screen_3

@@ -1,13 +1,17 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
-    Text,
-    View,
-    Image,
-    TouchableOpacity,
+    AppRegistry,
+    StyleSheet,
+    Platform,
     TextInput,
+    Text,
+    TouchableOpacity,
+    FlatList,
     ImageBackground,
-    StatusBar
-} from 'react-native'
+    StatusBar,
+    Image,
+    View
+} from 'react-native';
 import {
     Container,
     Header,
@@ -17,12 +21,50 @@ import {
     Icon,
     Content,
 } from 'native-base';
+import Add from "./Add"
+import TaskFlatList from "./TaskFlastList"
+
 import styles from "./styles"
 
 export default class Screen_2 extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            label : this.props.navigation.state.params.labels,
+            key: this.props.navigation.state.params.keys,
+            data : [
+                { title: 'Go to the office', isFinished: true },
+                { title: 'Prepare tasks for today', isFinished: false },
+                { title: 'Team meeting', isFinished: false },
+                { title: 'Commit tasks changed', isFinished: false },
+            ]
+        }
+    }
+
+    onAddNewTask = (taskName) => {
+        const newTask = { title: taskName, isFinished: false }
+        const newTaskList = [ ...this.state.data, newTask ]
+
+        this.setState({ data: newTaskList });
+    }
+
+    onFinishedItem = (index) => {
+        let newTaskList = this.state.data;
+        newTaskList[index].isFinished = true;
+        this.setState({ data: newTaskList });
+    }
+
+    onDeleteItem = (index) => {
+        let newTaskList = this.state.data.filter( (item, i) => i != index );
+        this.setState({ data: newTaskList });
+    }
+
     render() {
+        console.log(this.state.label);
         return (
-            <Container style={styles.bg}>
+            <View style={ styles.container }>
                 <ImageBackground source={require('../../../img/40548485-Abstract-polygonal-background-vector-green-Stock-Vector.jpg')} style={[styles.header]}>
                     <StatusBar translucent={true} backgroundColor='transparent'/>
                     <View style={{flex: 2, alignItems: 'flex-start'}}>
@@ -31,7 +73,7 @@ export default class Screen_2 extends Component {
                         </TouchableOpacity>
                     </View>
                     <View style={{flex: 6}}>
-                        <Text style={styles.txt_head}>Thứ 2</Text>
+                        <Text style={styles.txt_head}>{this.state.label}</Text>
                     </View>
                     <View style={{flex: 2, alignItems: 'flex-end'}}>
                         <TouchableOpacity>
@@ -39,27 +81,14 @@ export default class Screen_2 extends Component {
                         </TouchableOpacity>
                     </View>
                 </ImageBackground>
-                <Content style={{padding: 20}}>
-                    <View style={{ flexDirection:'row'}}>
-                        <View style={{flex: 7}}>
-                            <TextInput
-                                placeholder='Công việc'
-                                style={{fontSize: 16}}
-                            />
-                        </View>
-                        <View style={{flex: 1}}/>
-                        <Right>
-                            <View style={styles.view_add}>
-
-                                <Button style={styles.btn_add}>
-                                    <Text style={styles.txt_add}>ADD</Text>
-                                </Button>
-
-                            </View>
-                        </Right>
-                    </View>
-                </Content>
-            </Container>
+                <Add onAddNewTask={ this.onAddNewTask } />
+                <TaskFlatList
+                    listData={ this.state.data }
+                    onFinishedItem={ this.onFinishedItem }
+                    onDeleteItem={ this.onDeleteItem }
+                />
+            </View>
         );
     }
 }
+

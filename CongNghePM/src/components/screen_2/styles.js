@@ -3,6 +3,23 @@ const styles = StyleSheet.create({
     bg: {
         backgroundColor: '#fff'
     },
+    container: {
+        flex: 1,
+        backgroundColor: '#E1F5FE'
+    },
+    input : {
+        height: 30,
+        padding: 5,
+        borderBottomWidth: 1,
+        fontSize: 15
+    },
+
+    button : {
+        marginLeft: 10,
+        borderRadius: 5,
+        backgroundColor: '#2196F3',
+        padding: 7
+    },
     header: {
         backgroundColor: '#69d22e',
         flexDirection: 'row',
