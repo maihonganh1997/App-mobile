@@ -51,7 +51,7 @@ export default class Screen1 extends Component{
                         data.map(item => {
                             return (
                                 <View style={styles.bor_bot}>
-                                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen_2')}>
+                                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Screen_2', {lables: item.label, keys: item.key})}>
                                         <View style={styles.listitem}>
                                             <Image style={styles.avata}
                                                    source={require('../../../img/images.jpg')}/>
