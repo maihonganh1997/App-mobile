@@ -14,7 +14,7 @@ Trong cuộc sống hiện đại, mỗi ngày con người đều có rất nhi
    -	Đặc biệt với việc sử dụng công nghệ React- native để xây dựng App đã tạo nên những tối ưu vượt trội
    
 * Hướng phát triển của app:
--App có cách nhắc nhở hợp lí đó là có nhạc phát ra hoặc có giọng đọc thời gian biểu để người dùng không cần nhìn vào màn hình điện     thoại mà vẫn biết được công việc mà mình cần thực hiện là gì.
+App có cách nhắc nhở hợp lí đó là có nhạc phát ra hoặc có giọng đọc thời gian biểu để người dùng không cần nhìn vào màn hình điện     thoại mà vẫn biết được công việc mà mình cần thực hiện là gì.
 
 * SỬ DỤNG CÔNG NGHỆ REACT-NATIVE ĐỂ THỰC HIỆN:
   * Lí do sử dụng công nghệ react-native:
