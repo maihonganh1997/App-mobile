@@ -1,5 +1,6 @@
-# App-mobile 
+# App-mobile INSE
 'App nhắc nhở thời gian biểu'
+'INSE = Intelligent Secretary'
 
 Describe: 
 * Giới thiệu:
@@ -12,14 +13,15 @@ Trong cuộc sống hiện đại, mỗi ngày con người đều có rất nhi
   -	Giao diện xây dựng một cách tối ưu, dễ theo dõi và sử dụng, thuận tiện cho người dùng nhập thời gian biểu
   -	Các chức năng được xây dựng phù hợp và dễ quản lí giúp người dùng sử dụng thuận tiện hơn
    -	Đặc biệt với việc sử dụng công nghệ React- native để xây dựng App đã tạo nên những tối ưu vượt trội
-   
+* Mức độ hoàn thiện: 
+  _ Giao diện: 100%
+  _ Chức năng: Thêm, sửa, xóa(30%)   
 * Hướng phát triển của app:
 App có cách nhắc nhở hợp lí đó là có nhạc phát ra hoặc có giọng đọc thời gian biểu để người dùng không cần nhìn vào màn hình điện     thoại mà vẫn biết được công việc mà mình cần thực hiện là gì.
 
 * SỬ DỤNG CÔNG NGHỆ REACT-NATIVE ĐỂ THỰC HIỆN:
   * Lí do sử dụng công nghệ react-native:
-  - Là công nghê đa nền tảng(IOS, Android,...)
-  - “Học một lần sử dụng mọi nơi”
+  - Là công nghệ đa nền tảng build được trên cả IOS và Android
   
 * APP ĐƠN GIẢN LÀ THƯ KÍ TRONG CUỘC SỐNG CỦA BẠN
 
