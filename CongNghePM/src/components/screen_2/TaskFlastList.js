@@ -21,7 +21,7 @@ export default class TaskFlatList extends Component {
                     </TouchableOpacity>
                 </View>
                 <View style={{ flex: 1 }}>
-                    <Text style={{ color: 'black'}}>{item.title}</Text>
+                    <Text style={{ color: 'black'}}> {item.time} - {item.title}</Text>
                 </View>
                 <View style={{ justifyContent: 'center' }}>
                     <TouchableOpacity style={{ marginTop: -2 }} onPress={ () => onDeleteItem(index) }>
