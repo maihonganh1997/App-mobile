@@ -32,19 +32,27 @@ export default class Screen_2 extends Component {
         super(props);
 
         this.state = {
-            label : this.props.navigation.state.params.labels,
+            label : this.props.navigation.state.params.lables,
             key: this.props.navigation.state.params.keys,
             data : [
-                { title: 'Go to the office', isFinished: true },
-                { title: 'Prepare tasks for today', isFinished: false },
-                { title: 'Team meeting', isFinished: false },
-                { title: 'Commit tasks changed', isFinished: false },
+                {   time: '08:00',
+                    title: 'Đi thi CTDL',
+                    isFinished: true },
+                {   time: "08:00",
+                    title: 'Thi CNPM',
+                    isFinished: false },
+                {   time: "08:00",
+                    title: 'Thi Giai Tich so',
+                    isFinished: false },
+                {   time:"11:00",
+                    title: 'On Tri Tue Nhan Tao',
+                    isFinished: false },
             ]
         }
     }
 
-    onAddNewTask = (taskName) => {
-        const newTask = { title: taskName, isFinished: false }
+    onAddNewTask = (taskName,times ) => {
+        const newTask = { time: times, title: taskName, isFinished: false }
         const newTaskList = [ ...this.state.data, newTask ]
 
         this.setState({ data: newTaskList });
@@ -62,7 +70,7 @@ export default class Screen_2 extends Component {
     }
 
     render() {
-        console.log(this.state.label);
+        console.log(this.state.data)
         return (
             <View style={ styles.container }>
                 <ImageBackground source={require('../../../img/40548485-Abstract-polygonal-background-vector-green-Stock-Vector.jpg')} style={[styles.header]}>
